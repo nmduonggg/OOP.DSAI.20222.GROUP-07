@@ -1,0 +1,49 @@
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+
+import javafx.event.ActionEvent;
+
+public class mainScreenController {
+    @FXML private Button virusBtn;
+    @FXMl private Button helpBtn;
+    @FXMl private Button aboutBtn;
+    @FXML private Button quitBtn;
+    @FXML private Button envelopeBtn;
+    @FXML private Button noenvelopeBtn;
+    @FXML private AnchorPane virusPane;
+    @FXML private Pane helpPane;
+    @FXML private Pane aboutPane;
+
+
+    @FXML
+    private void initialize() {
+        virusBtn.setVisible(true);
+        helpBtn.setVisible(true);
+        aboutBtn.setVisible(true);
+        quitBtn.setVisible(true);
+        envelopedBtn.setVisible(false);
+        envelopeBtn.setVisible(false);
+
+        virusPane.setVisible(true);
+        helpPane.setVisible(false);
+        aboutPane.setVisible(false);
+
+    }
+
+    @FXML
+    private void virusBtnClicked(ActionEvent event) {
+        virusPane.setVisible(true);
+        envelopeBtn.setVisible(true);
+        noenvelopeBtn.setVisible(true);
+    }
+
+    @FXMl
+    private void helpBtnClicked(ActionEvent event) {
+        helpPane.setVisible(true);
+    }
+
+    @FXML 
+    private void aboutBtnClicked(ActionEvent event) {
+        aboutPane.setVisible(true);
+    }
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="840.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="568.0" prefWidth="610.0" spacing="100.0" style="-fx-background-color: #fff;" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="envelopeBtn" mnemonicParsing="false" onAction="#envelopeBtnClicked" prefHeight="87.0" prefWidth="267.0" text="Viruss with lipid envelop">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="noenvelopeBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#noenvelopeBtnClicked" prefHeight="87.0" prefWidth="267.0" text="Viruss without lipid envelop">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Pane fx:id="helpPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="564.0" prefWidth="609.0" />
+            <Pane fx:id="aboutPane" prefHeight="564.0" prefWidth="609.0" AnchorPane.leftAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="565.0" prefWidth="227.0" style="-fx-background-color: #F0F8FF;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="565.0" prefWidth="55.0" style="-fx-background-color: #F0F8FF;" />
+            <Button fx:id="virusBtn" layoutX="54.0" layoutY="25.0" mnemonicParsing="false" onAction="#virusBtnClicked" prefHeight="46.0" prefWidth="178.0" style="-fx-background-color: #F0F8FF;" text="Virusses">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="helpBtn" layoutX="55.0" layoutY="71.0" mnemonicParsing="false" onAction="#helpBtnClicked" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #F0F8FF;" text="Help">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="aboutBtn" layoutX="56.0" layoutY="117.0" mnemonicParsing="false" onAction="#aboutBtnClicked" prefHeight="46.0" prefWidth="176.0" style="-fx-background-color: #F0F8FF;" text="About">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="quitBtn" layoutX="55.0" layoutY="163.0" mnemonicParsing="false" onAction="#quitBtnClicked" prefHeight="46.0" prefWidth="177.0" style="-fx-background-color: #F0F8FF;" text="Quit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <top>
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="840.0" style="-fx-background-color: #F0F8FF;" text="Virusses Demonstration">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>
