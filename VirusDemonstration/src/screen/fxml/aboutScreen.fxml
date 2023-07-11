@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="715.0" style="-fx-background-color: #F2EAD3;" text="About us" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <TextArea fx:id="aboutArea" prefHeight="293.0" prefWidth="427.0" text="This application is DSAI.Group 07 mini-project for Object-&#10;Oriented Programming course, taught by Prof. Nguyen Thi&#10;Thu Trang&#10;&#10;Course ID: IT3100E&#10;Class ID: 141177&#10;Semester 20222&#10;&#10;The required task for this application is:  &#10;- Demonstration of types of virusses and its mechanism" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextArea>
+   </center>
+</BorderPane>
