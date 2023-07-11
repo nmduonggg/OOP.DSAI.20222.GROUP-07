@@ -1,7 +1,13 @@
+package screen.controller;
+
+import screen.launch.aboutScreen;
+import screen.launch.helpScreen;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+
 import javafx.event.ActionEvent;
+
 
 public class mainScreenController {
     @FXML private Button btnEnvelope;
@@ -9,19 +15,19 @@ public class mainScreenController {
 
 
     @FXML
-    private void initialize() {
+    public void initialize() {
         btnEnvelope.setVisible(true);
         btnNoEnvelope.setVisible(true);
     }
 
     @FXML
     private void menuItemHelpClicked(ActionEvent event) {
-        
+        helpScreen help = new helpScreen();
     }
 
     @FXML 
     private void menuItemAboutClicked(ActionEvent event) {
-        
+        aboutScreen about = new aboutScreen();
     }
 
     @FXML
