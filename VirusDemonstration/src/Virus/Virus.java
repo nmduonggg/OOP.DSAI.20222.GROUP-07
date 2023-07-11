@@ -4,7 +4,7 @@ import java.util.List;
 import Virus.VirusStructure.AcidNucleic;
 import Virus.VirusStructure.Capsid;
 
-public abstract class Virus implements infect {
+public abstract class Virus {
     private String name;
     private String family;
     private String structure;
@@ -51,10 +51,5 @@ public abstract class Virus implements infect {
 
     public Capsid getCapsid() {
         return capsid;
-    }
-
-    @Override
-    public void infectHostCell() {   
-        // Implementation of infectHostCell() method
     }
 }
