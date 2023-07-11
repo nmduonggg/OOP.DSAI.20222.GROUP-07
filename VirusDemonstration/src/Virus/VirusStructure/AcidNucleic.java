@@ -11,7 +11,9 @@ public class AcidNucleic {
     static {
         familyToTypeMap.put("Herpesviruses", "dsDNA");
         familyToTypeMap.put("Coronaviruses", "ssRNA");
-        familyToTypeMap.put("Picornaviruses", "ssRNA");
+        familyToTypeMap.put("Retroviruses", "ssRNA");
+        familyToTypeMap.put("Papillomaviruses", "dsDNA");
+        familyToTypeMap.put("Adenoviruses", "dsDNA");
         // Add more mappings for different families of viruses
     }
 
@@ -27,7 +29,7 @@ public class AcidNucleic {
         this.typeAcidNucleic = typeAcidNucleic;
     }
 
-    private String getTypeForFamily(String family) {
+    public String getTypeForFamily(String family) {
         return familyToTypeMap.getOrDefault(family, "Unknown");
     }
 }

@@ -12,15 +12,21 @@ public abstract class Virus implements infect {
     private AcidNucleic acidNucleic;
     private Capsid capsid;
 
-    public Virus(String family) {
-        super();
-    }
-
-    public Virus(String name, String family, AcidNucleic acidNucleic, Capsid capsid) {
+    public Virus(String name, String family, String structure, List<String> mechanism, AcidNucleic acidNucleic, Capsid capsid) {
         this.name = name;
         this.family = family;
-        this.acidNucleic = new AcidNucleic(family);
-        this.capsid = new Capsid(name);
+        this.structure = null;
+        this.mechanism = null;
+        this.acidNucleic = acidNucleic;
+        this.capsid = capsid;
+    }
+
+    public void setStructure(String structure) {
+        this.structure = structure;
+    }
+
+    public void setMechanism(List<String> mechanism) {
+        this.mechanism = mechanism;
     }
 
     public String getName() {
@@ -45,14 +51,6 @@ public abstract class Virus implements infect {
 
     public Capsid getCapsid() {
         return capsid;
-    }
-    
-    public void setStructure(String structure) {
-        this.structure = structure;
-    }
-    
-    public void setMechanism(List<String> mechanism) {
-        this.mechanism = mechanism;
     }
 
     @Override
