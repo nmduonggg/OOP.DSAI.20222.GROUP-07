@@ -1,22 +1,40 @@
 package screen.controller;
 
-import screen.launch.aboutScreen;
-import screen.launch.helpScreen;
+import screen.launch.VirusStructureScreen;
+import screen.launch.AboutScreen;
+import screen.launch.HelpScreen;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import javax.swing.Action;
+
+import Virus.Virus;
+import Virus.VirusManager;
+import Virus.VirusStructure.AcidNucleic;
+import Virus.VirusStructure.Capsid;
+import Virus.VirusWithEnvelope.Coronaviruses;
+import Virus.VirusWithEnvelope.Envelope;
+import Virus.VirusWithEnvelope.Glycoprotein;
+import Virus.VirusWithEnvelope.Herpesviruses;
+import Virus.VirusWithEnvelope.Retroviruses;
+import Virus.VirusWithoutEnvelope.Adenoviruses;
+import Virus.VirusWithoutEnvelope.Papillomaviruses;
 import javafx.event.ActionEvent;
 
 
-public class mainScreenController extends homeScreenController {
+public class MainScreenController extends HomeScreenController {
     @FXML private Button btnEnvelope;
     @FXML private Button btnNoEnvelope;
     @FXML private Button btnCoronaVirus;
     @FXML private Button btnHerpesVirus;
     @FXML private Button btnAdenoVirus;
     @FXML private Button btnPapVirus;
-    @FXML private Button btnQuit;
+    @FXML private Button btnRetroVirus;
+
+    private VirusManager virusManager = new VirusManager();
+
 
     @FXML @Override
     public void initialize() {
@@ -26,20 +44,22 @@ public class mainScreenController extends homeScreenController {
         btnCoronaVirus.setVisible(false);
         btnAdenoVirus.setVisible(false);
         btnPapVirus.setVisible(false);
+        btnRetroVirus.setVisible(false);
+        virusManager.initialize();
     }
 
     @FXML
-    private void menuItemHelpClicked(ActionEvent event) {
-        helpScreen help = new helpScreen();
+    protected void menuItemHelpClicked(ActionEvent event) {
+        HelpScreen help = new HelpScreen();
     }
 
     @FXML 
-    private void menuItemAboutClicked(ActionEvent event) {
-        aboutScreen about = new aboutScreen();
+    protected void menuItemAboutClicked(ActionEvent event) {
+        AboutScreen about = new AboutScreen();
     }
 
     @FXML
-    private void menuItemMenuClicked(ActionEvent event) {
+    protected void menuItemMenuClicked(ActionEvent event) {
         // mainScreen screen = new mainScreen();
 
     }
@@ -48,6 +68,7 @@ public class mainScreenController extends homeScreenController {
     private void btnEnvelopeClicked(ActionEvent event) {
         btnCoronaVirus.setVisible(true);
         btnHerpesVirus.setVisible(true);
+        btnRetroVirus.setVisible(true);;
         btnAdenoVirus.setVisible(false);
         btnPapVirus.setVisible(false);
     }
@@ -58,33 +79,48 @@ public class mainScreenController extends homeScreenController {
         btnPapVirus.setVisible(true);
         btnCoronaVirus.setVisible(false);
         btnHerpesVirus.setVisible(false);
+        btnRetroVirus.setVisible(false);
     }
 
     
     @FXML
-    private void btnCoronaVirusClicked(ActionEvent event) {
-
-    }
-
-    
-    @FXML
-    private void btnHerpesVirusClicked(ActionEvent event) {
+    private void btnCoronaVirusClicked(ActionEvent event) { // SARS_Cov_2
+        Coronaviruses cov2 = virusManager.getCoronavirus();
+        VirusStructureScreenController controller = new VirusStructureScreenController(cov2);
+        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
 
     }
 
     
     @FXML
-    private void btnAdenoVirusClicked(ActionEvent event) {
+    private void btnHerpesVirusClicked(ActionEvent event) { // HSV1
+        Herpesviruses hsv1 = virusManager.getHerpesvirus();
+        VirusStructureScreenController controller = new VirusStructureScreenController(hsv1);
+        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
 
     }
 
     
     @FXML
-    private void btnPapVirusClicked(ActionEvent event) {
-
+    private void btnAdenoVirusClicked(ActionEvent event) { // Adenovirus
+        Adenoviruses adeno = virusManager.getAdenovirus();
+        VirusStructureScreenController controller = new VirusStructureScreenController(adeno);
+        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
     }
 
     
+    @FXML
+    private void btnPapVirusClicked(ActionEvent event) { // HPV
+        Papillomaviruses hpv = virusManager.getPapilomavirus();
+        VirusStructureScreenController controller = new VirusStructureScreenController(hpv);
+        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+    }
 
-
+    @FXML 
+    private void btnRetroVirusClicked (ActionEvent event) {  // HIV
+        Retroviruses hiv = virusManager.getRetrovirus();
+        VirusStructureScreenController controller = new VirusStructureScreenController(hiv);
+        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+    }
 }
+

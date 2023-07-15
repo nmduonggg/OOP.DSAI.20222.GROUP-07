@@ -3,7 +3,7 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.TextArea;
 
-public class helpScreenController extends homeScreenController {
+public class HelpScreenController extends HomeScreenController {
     @FXML private TextArea helpArea;
     
     @Override

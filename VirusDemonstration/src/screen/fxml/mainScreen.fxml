@@ -54,7 +54,7 @@
       </Pane>
    </center>
    <left>
-      <VBox prefHeight="575.0" prefWidth="231.0" spacing="25.0" style="-fx-background-color: #ECE5C7;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="575.0" prefWidth="231.0" spacing="12.0" style="-fx-background-color: #ECE5C7;" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" prefHeight="36.0" prefWidth="231.0" text="Demonstration" textAlignment="CENTER">
                <font>
@@ -68,6 +68,11 @@
                </VBox.margin>
             </Button>
             <Button fx:id="btnHerpesVirus" layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnHerpesVirusClicked" prefHeight="41.0" prefWidth="161.0" text="Herpes Virus">
+               <VBox.margin>
+                  <Insets left="36.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnRetroVirus" layoutX="46.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnRetroVirusClicked" prefHeight="41.0" prefWidth="161.0" text="Retro Virus">
                <VBox.margin>
                   <Insets left="36.0" />
                </VBox.margin>
