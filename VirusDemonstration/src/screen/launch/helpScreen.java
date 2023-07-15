@@ -1,10 +1,10 @@
 package screen.launch;
 
-import screen.controller.helpScreenController;
+import screen.controller.HelpScreenController;
 
-public class helpScreen extends homeScreen {
-    public helpScreen() {
-        super("Help", "/screen/fxml/helpScreen.fxml", new helpScreenController());
+public class HelpScreen extends HomeScreen {
+    public HelpScreen() {
+        super("Help", "/screen/fxml/helpScreen.fxml", new HelpScreenController());
     }
 }
     

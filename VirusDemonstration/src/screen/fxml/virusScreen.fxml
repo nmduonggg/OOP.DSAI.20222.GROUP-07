@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="498.0" prefWidth="715.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Virus Menu">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuItemMenuClicked" text="Menu" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuItemHelpClicked" text="Help" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuItemAboutClicked" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <Pane fx:id="paneVirusCenter" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="473.0" prefWidth="424.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="473.0" prefWidth="247.0" spacing="18.0" style="-fx-background-color: #ECE5C7;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="12.0" prefWidth="231.0" text="Demonstration" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="Name">
+               <graphic>
+                  <TextField fx:id="tfVirusName" editable="false" prefHeight="40.0" prefWidth="150.0" />
+               </graphic>
+            </Label>
+            <Label layoutX="10.0" layoutY="71.0" text="Family">
+               <graphic>
+                  <TextField fx:id="tfVirusFamily" editable="false" prefHeight="39.0" prefWidth="150.0" />
+               </graphic>
+            </Label>
+            <Label layoutX="10.0" layoutY="121.0" prefHeight="25.0" prefWidth="232.0" text="Acid Nucleic">
+               <graphic>
+                  <TextField fx:id="tfVirusAcid" editable="false" prefHeight="40.0" prefWidth="150.0" />
+               </graphic>
+            </Label>
+            <Label layoutX="10.0" layoutY="171.0" text="Capsid">
+               <graphic>
+                  <TextArea fx:id="taVirusCapsid" prefHeight="80.0" prefWidth="150.0" />
+               </graphic>
+            </Label>
+            <Label layoutX="20.0" layoutY="286.0" text="Envelope">
+               <graphic>
+                  <TextField fx:id="tfVirusEnvelope" editable="false" prefHeight="40.0" prefWidth="150.0" />
+               </graphic>
+            </Label>
+            <Button fx:id="btnMechanism" mnemonicParsing="false" onAction="#btnMechanismClicked" prefHeight="57.0" prefWidth="157.0" text="Mechanism">
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+   </right>
+</BorderPane>

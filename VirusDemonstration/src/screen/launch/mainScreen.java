@@ -1,12 +1,8 @@
 package screen.launch;
-import screen.controller.mainScreenController;
+import screen.controller.MainScreenController;
 
-public class mainScreen extends homeScreen {
-    public mainScreen() {
-        super("Virus Demonstration", "/screen/fxml/mainScreen.fxml", new mainScreenController());
-    }
-    public static void main(String[] args){
-        mainScreen screen = new mainScreen();
+public class MainScreen extends HomeScreen {
+    public MainScreen() {
+        super("Virus Demonstration", "/screen/fxml/mainScreen.fxml", new MainScreenController());
     }
 }
-

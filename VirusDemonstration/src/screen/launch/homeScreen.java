@@ -1,21 +1,25 @@
 package screen.launch;
 import javafx.embed.swing.JFXPanel;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import screen.controller.*;
 
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 import javax.swing.JFrame;
+
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 
-public class homeScreen extends JFrame {
+public class HomeScreen extends JFrame {
     String title;
     String fxmlPath;
-    public homeScreen(String title, String fxmlPath, homeScreenController controller) {
+    public HomeScreen(String title, String fxmlPath, HomeScreenController controller) {
 
         this.title = title;
         this.fxmlPath = fxmlPath;
@@ -31,7 +35,6 @@ public class homeScreen extends JFrame {
             public void run() {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-                    // aboutScreenController controller = new aboutScreenController();
                     loader.setController(controller);
                     Parent root = (Parent) loader.load();
                     fxPanel.setScene(new Scene(root));
@@ -44,3 +47,25 @@ public class homeScreen extends JFrame {
     }
 }
 
+// public class homeScreen extends Application {
+
+//     String fxmlPath;
+//     String title;
+//     homeScreenController controller;
+    
+//     @Override
+//     public void start(Stage stage) throws Exception {
+//         FXMLLoader loader = new FXMLLoader(getClass().getResource(this.fxmlPath));
+//         Parent root = (Parent) loader.load();
+//         Scene scene = new Scene(root);
+//         stage.setScene(scene);
+//         stage.show();
+
+//     }
+
+//     public homeScreen(String title, String fxml, homeScreenController controller) {
+//         this.fxmlPath = fxmlPath;
+//         this.title = title;
+//         this.controller = controller;
+//     }
+// }
