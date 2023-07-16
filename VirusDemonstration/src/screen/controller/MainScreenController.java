@@ -3,7 +3,7 @@ package screen.controller;
 import screen.launch.VirusStructureScreen;
 import screen.launch.AboutScreen;
 import screen.launch.HelpScreen;
-
+import screen.launch.MainScreen;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -59,10 +59,13 @@ public class MainScreenController extends HomeScreenController {
     }
 
     @FXML
-    protected void menuItemMenuClicked(ActionEvent event) {
-        // mainScreen screen = new mainScreen();
-
+protected void menuItemMenuClicked(ActionEvent event) {
+    try {
+        MainScreen screen = new MainScreen();
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
 
     @FXML
     private void btnEnvelopeClicked(ActionEvent event) {

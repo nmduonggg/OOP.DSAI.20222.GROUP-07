@@ -1,7 +1,5 @@
 package Virus.VirusWithEnvelope;
 
-import java.util.List;
-
 import Virus.VirusStructure.AcidNucleic;
 import Virus.VirusStructure.Capsid;
 
