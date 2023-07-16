@@ -75,16 +75,6 @@ public class VirusManager {
         String mechanismFilePath = virusesFolderPath + virusFolderName + "/Mechanism.mp4";
         return mechanismFilePath;
     }
-
-    // Custom comparator to sort mechanism file names
-    public static class MechanismFileNameComparator implements Comparator<String> {
-        @Override
-        public int compare(String o1, String o2) {
-            String number1 = o1.substring(0, o1.lastIndexOf("."));
-            String number2 = o2.substring(0, o2.lastIndexOf("."));
-            return Integer.compare(Integer.parseInt(number1), Integer.parseInt(number2));
-        }
-    }
     
     public static List<Virus> getViruses() {
         return viruses;
