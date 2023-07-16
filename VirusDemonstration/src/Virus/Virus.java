@@ -1,5 +1,4 @@
 package Virus;
-import java.util.List;
 
 import Virus.VirusStructure.AcidNucleic;
 import Virus.VirusStructure.Capsid;
@@ -8,11 +7,12 @@ public abstract class Virus {
     private String name;
     private String family;
     private String structure;
-    private List<String> mechanism;
+    private String mechanism;
     private AcidNucleic acidNucleic;
     private Capsid capsid;
+    private String mechanismSummary;
 
-    public Virus(String name, String family, String structure, List<String> mechanism, AcidNucleic acidNucleic, Capsid capsid) {
+    public Virus(String name, String family, String structure, String mechanism, AcidNucleic acidNucleic, Capsid capsid) {
         this.name = name;
         this.family = family;
         this.structure = null;
@@ -25,8 +25,16 @@ public abstract class Virus {
         this.structure = structure;
     }
 
-    public void setMechanism(List<String> mechanism) {
+    public void setMechanism(String mechanism) {
         this.mechanism = mechanism;
+    }
+
+    public void setMechanismSummary(String mechanismSummary) {
+        this.mechanismSummary = mechanismSummary;
+    }
+
+    public String getMechanismSummary() {
+        return mechanismSummary;
     }
 
     public String getName() {
@@ -41,7 +49,7 @@ public abstract class Virus {
         return structure;
     }
 
-    public List<String> getMechanism() {
+    public String getMechanism() {
         return mechanism;
     }
 
