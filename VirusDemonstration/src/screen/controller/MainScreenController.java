@@ -59,13 +59,9 @@ public class MainScreenController extends HomeScreenController {
     }
 
     @FXML
-protected void menuItemMenuClicked(ActionEvent event) {
-    try {
-        MainScreen screen = new MainScreen();
-    } catch (Exception e) {
-        e.printStackTrace();
+    protected void menuItemMenuClicked(ActionEvent event) {
+        // mainScreen = new mainScreen();
     }
-}
 
     @FXML
     private void btnEnvelopeClicked(ActionEvent event) {
