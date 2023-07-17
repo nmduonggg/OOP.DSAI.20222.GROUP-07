@@ -14,6 +14,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
+import screen.launch.HomeScreen;
 import screen.launch.MainScreen;
 import screen.launch.VirusMechanismScreen;
 
@@ -59,6 +60,7 @@ public class VirusStructureScreenController extends MainScreenController {
     }
 
     public VirusStructureScreenController(Virus virus) {
+
         this.virus = virus;
         virusName = virus.getName();
         virusFamily = virus.getFamily();
@@ -76,10 +78,15 @@ public class VirusStructureScreenController extends MainScreenController {
     public void btnMechanismClicked(ActionEvent event) {
         VirusMechanismScreenController mechanismController = new VirusMechanismScreenController(virus);
         VirusMechanismScreen mechanismScreen = new VirusMechanismScreen(mechanismController);
+        this.screen.dispose();
+        mechanismController.set_screen(mechanismScreen);
     }
 
     @FXML @Override
     protected void menuItemMenuClicked(ActionEvent event) {
-        MainScreen screen = new MainScreen();
+        MainScreenController controller = new MainScreenController();
+        MainScreen menuScreen = new MainScreen(controller);
+        this.screen.dispose();
+        controller.set_screen(menuScreen);
     }
 }

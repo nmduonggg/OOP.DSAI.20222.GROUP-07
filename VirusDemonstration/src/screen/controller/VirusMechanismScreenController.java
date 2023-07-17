@@ -1,6 +1,8 @@
 package screen.controller;
 
 import Virus.Virus;
+import screen.launch.HomeScreen;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -48,6 +50,10 @@ public class VirusMechanismScreenController extends MainScreenController {
 
     @FXML @Override
     protected void menuItemMenuClicked(ActionEvent event) {
-        MainScreen screen = new MainScreen();
+        MainScreenController controller = new MainScreenController();
+        MainScreen menuScreen = new MainScreen(controller);
+        this.screen.dispose();
+        controller.set_screen(menuScreen);
+
     }
 }
