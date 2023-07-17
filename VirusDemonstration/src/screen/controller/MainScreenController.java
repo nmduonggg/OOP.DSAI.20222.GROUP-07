@@ -3,6 +3,7 @@ package screen.controller;
 import screen.launch.VirusStructureScreen;
 import screen.launch.AboutScreen;
 import screen.launch.HelpScreen;
+import screen.launch.HomeScreen;
 import screen.launch.MainScreen;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -35,6 +36,9 @@ public class MainScreenController extends HomeScreenController {
 
     VirusManager virusManager = new VirusManager();
 
+    public void set_screen(HomeScreen screen) {
+        this.screen = screen;
+    }
 
     @FXML @Override
     public void initialize() {
@@ -86,7 +90,9 @@ public class MainScreenController extends HomeScreenController {
     private void btnCoronaVirusClicked(ActionEvent event) { // SARS_Cov_2
         Coronaviruses cov2 = virusManager.getCoronavirus();
         VirusStructureScreenController controller = new VirusStructureScreenController(cov2);
-        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+        this.screen.dispose();
+        VirusStructureScreen structureScreen = new VirusStructureScreen(controller);
+        controller.set_screen(structureScreen);
 
     }
 
@@ -95,7 +101,9 @@ public class MainScreenController extends HomeScreenController {
     private void btnHerpesVirusClicked(ActionEvent event) { // HSV1
         Herpesviruses hsv1 = virusManager.getHerpesvirus();
         VirusStructureScreenController controller = new VirusStructureScreenController(hsv1);
-        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+        this.screen.dispose();
+        VirusStructureScreen structureScreen = new VirusStructureScreen(controller);
+        controller.set_screen(structureScreen);
 
     }
 
@@ -104,7 +112,9 @@ public class MainScreenController extends HomeScreenController {
     private void btnAdenoVirusClicked(ActionEvent event) { // Adenovirus
         Adenoviruses adeno = virusManager.getAdenovirus();
         VirusStructureScreenController controller = new VirusStructureScreenController(adeno);
-        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+        this.screen.dispose();
+        VirusStructureScreen structureScreen = new VirusStructureScreen(controller);
+        controller.set_screen(structureScreen);
     }
 
     
@@ -112,14 +122,18 @@ public class MainScreenController extends HomeScreenController {
     private void btnPapVirusClicked(ActionEvent event) { // HPV
         Papillomaviruses hpv = virusManager.getPapilomavirus();
         VirusStructureScreenController controller = new VirusStructureScreenController(hpv);
-        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+        this.screen.dispose();
+        VirusStructureScreen structureScreen = new VirusStructureScreen(controller);
+        controller.set_screen(structureScreen);
     }
 
     @FXML 
     private void btnRetroVirusClicked (ActionEvent event) {  // HIV
         Retroviruses hiv = virusManager.getRetrovirus();
         VirusStructureScreenController controller = new VirusStructureScreenController(hiv);
-        VirusStructureScreen structureScreeen = new VirusStructureScreen(controller);
+        this.screen.dispose();
+        VirusStructureScreen structureScreen = new VirusStructureScreen(controller);
+        controller.set_screen(structureScreen);
     }
 }
 
